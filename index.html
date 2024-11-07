@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Introduction</title>
+  </head>
+  <body>
+    <div id="root"></div> <!-- The root element where React will render the content -->
+
+    <!-- Including React, ReactDOM, and Babel for JSX support -->
+    <script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+    <script src="https://unpkg.com/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <!-- Add your JSX code here -->
+    <script type="text/babel">
+      // Create a React component wrapped in a Fragment
+      const MyComponent = () => {
+        // Define inline styles as a JavaScript object
+        const styles = {
+          container: {
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100vh',
+            backgroundColor: '#f0f0f0',
+          },
+          button: {
+            padding: '10px 20px',
+            fontSize: '16px',
+            cursor: 'pointer',
+            backgroundColor: '#4CAF50',
+            color: 'white',
+            border: 'none',
+            borderRadius: '5px',
+          },
+          heading: {
+            fontSize: '24px',
+            marginBottom: '20px',
+            color: '#333',
+          },
+        };
+
+        // Event handler for the button
+        const handleClick = () => {
+          alert('Button clicked!');
+        };
+
+        // Return JSX wrapped in a Fragment
+        return (
+          <React.Fragment>
+            <div style={styles.container}>
+              <div>
+                <h1 style={styles.heading}>Welcome to React!</h1>
+                <button style={styles.button} onClick={handleClick}>
+                  Click Me
+                </button>
+              </div>
+            </div>
+          </React.Fragment>
+        );
+      };
+
+      // Render the component into the DOM
+      ReactDOM.render(<MyComponent />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
